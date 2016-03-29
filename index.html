@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="UTF-8">
+    <title>Zipline: Wikipedia Viewer</title>
+    
+    
+    
+    <link rel='stylesheet prefetch' href='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css'>
+
+        <link rel="stylesheet" href="css/style.css">
+
+    
+    
+    
+  </head>
+
+  <body>
+
+    <div id="new-page" class="vertical-center">
+  <div class="container">
+    <div class="row">
+      <div class="text-center">
+        <div class="col-md-4 col-md-offset-4">
+          
+          <img id="logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Wikipedia-logo-v2-en.svg/135px-Wikipedia-logo-v2-en.svg.png">
+          
+          <input id="search-box" class="form-control" type="text" placeholder="Search Wikipedia...">
+          
+          <a id="random-page" class="btn btn-default" href="https://en.wikipedia.org/wiki/Special:Random" target="_blank">Go to a random entry</a>
+          
+        </div> <!-- .col-md-4 -->
+      </div> <!-- .text-center -->
+    </div> <!-- .row -->
+  </div> <!-- .container -->
+</div> <!-- #new-page -->
+
+<div class="container">
+  <div id="results-list" class="clearfix"></div>
+</div>
+
+<script id="result-template" type="text/x-handlebars-template">
+  {{#each query.search}}
+  <a href="https://en.wikipedia.org/wiki/{{snakeCase title}}" target="_blank">
+    <div class="result-item">
+      <h2 class="title">{{ title }}</h2>
+      <p class="snippet">{{{ snippet }}} …</p>
+    </div>
+  </a>
+  {{/each}}
+</script> <!-- #result-template -->
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script src='https://cdn.jsdelivr.net/handlebarsjs/4.0.5/handlebars.min.js'></script>
+
+        <script src="js/index.js"></script>
+
+    
+    
+    
+  </body>
+</html>
